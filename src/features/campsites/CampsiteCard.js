@@ -1,21 +1,25 @@
 // Step 1: Importing components from reactstrap
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 // Step 2: Defining the CampsiteCard function component
-const CampsiteCard = (props) => {
+const CampsiteCard = ({ campsite }) => {
+    const { id, image, name } = campsite;
     // Step 3 & 4: Rendering the Card component with nested components
     return (
+    <Link to={`${id}`}>
         <Card>
             <CardImg 
                 width='100%'
-                src={props.campsite.image}
-                alt={props.campsite.name}
+                src={image}
+                alt={name}
             />
             <CardImgOverlay>
                 {/* Step 5: Adding CardTitle inside CardImgOverlay */}
-                <CardTitle>{props.campsite.name}</CardTitle>
+                <CardTitle>{name}</CardTitle>
             </CardImgOverlay>
         </Card>
+    </Link>
     );
 };
 
