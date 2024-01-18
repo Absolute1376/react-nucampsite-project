@@ -1,7 +1,11 @@
 import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
+import { useSelector } from 'react-redux';
 
 const CampsiteDetail = ( {campsite} ) => {
     const { image, name, description } = campsite;
+
 
     return (
         <Col md='5' className='m-1'>
